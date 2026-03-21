@@ -40,9 +40,11 @@ body {
 }
 .logo {
     background-image: url("Background (2).png");
-    background-size: cover;
+    background-size: contain;
     height: 50px;
     width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .border {
     border: 2px solid transparent;
@@ -196,6 +198,14 @@ span {
 }
 .hero-msg a {
     color: #1292a8;
+     cursor: pointer;
+  transition: color 0.3s;
+}
+  .hero-msg a:hover {
+    color: #c7511f;  /* nice Amazon-like orange */
+    text-shadow: 0 0 5px rgba(199, 81, 31, 0.6),
+                 0 0 10px rgba(199, 81, 31, 0.4);
+
 }
 /** shop section **/
 .shop-section {
@@ -307,11 +317,156 @@ ul a:hover::after {
     font-size: 0.7rem;
     text-align: center;
     padding-top: 25px;
-
+   
 }
+
 .copyright {
     padding-top: 5px;
     font-size: 0.7rem;
     text-align: center;
 
+}
+footer a {
+    color: #dddddd;
+    text-decoration: none;
+}
+.add-cart {
+    background: none;     /* ✅ correct */
+    border: none;
+    padding: 0;           /* ✅ remove button spacing */
+    margin-top: 0;        /* optional for alignment */
+    color: #007185;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.add-cart:hover {
+    text-decoration: underline;   /* ✅ same as "See more" */
+}
+.box-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.see-more,
+.add-cart {
+    color: #007185;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.see-more:hover,
+.add-cart:hover {
+    text-decoration: underline;
+}
+.see-more:hover,
+.add-cart:hover {
+    text-decoration: underline;
+    color: #c7511f;  /* nice Amazon-like orange */
+
+    text-shadow: 0 0 5px rgba(199, 81, 31, 0.6),
+                 0 0 10px rgba(199, 81, 31, 0.4);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#modal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.modal-actions button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Buy Now */
+#buy-now {
+  background-color: orange;
+}
+
+#buy-now:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+/* Add to Cart */
+#modal-add-cart {
+  background-color: #ffd814;
+}
+
+#modal-add-cart:hover {
+  background-color: #f7ca00;
+  transform: scale(1.05);
+}
+.box {
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.box-image {
+  transition: transform 0.4s ease;
+}
+
+.box:hover .box-image {
+  transform: scale(1.08);
 }
